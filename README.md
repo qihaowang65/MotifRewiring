@@ -3,7 +3,9 @@ This project aims to perform graph rewiring based on motifs and apply downstream
 ## Raw Dataset
 The processed dataset is provided in "1. Raw Dataset" folder. The .mtx files are the edge lists and .labels files, if exist, are the node label file.
 ## Preprocess
-All files needed to preprocess the data is given in "2. Preprocess" folder. We use RI (https://github.com/InfOmics/RI) to perform subgraph matching for us. We did not get the permission to re-distribute the motif discovery algorithm, so we provided a simple "sample.py" function to sample a frequent pattern as a motif. Feel free to use your favoriate motif discovery algorithm to find a better motif. However, this simple sample.py are likely to provide you with decent motifs. First run:
+All files needed to preprocess the data is given in "2. Preprocess" folder. We use RI (https://github.com/InfOmics/RI) to perform subgraph matching for us. 
+
+We did not get the permission to re-distribute the motif discovery algorithm, so we provided a simple 'sample.py' function to sample a frequent pattern as a motif. Feel free to use your favoriate motif discovery algorithm to find a better motif. However, this simple sample.py are likely to provide you with decent motifs. First run:
 ```bash
 python3 0sample.py [.mtx file] [size of motif]
 ```
@@ -26,7 +28,7 @@ To execute the program, please run
 ```bash
 main.exe [Motif Edge File] [Algorithm] [Rewired Pattern if Algorithm is 1] [Output File Name]
 ```
-For example, if the input file's name is "book.edge", we aim to perform homophily-oriented rewiring, and the output file should be book_rewire.txt, then we need to run
+For example, if the input file's name is 'book.edge', we aim to perform homophily-oriented rewiring, and the output file should be book_rewire.txt, then we need to run
 ```bash
 main.exe book.edge 2 book_rewire.txt
 ```
@@ -44,6 +46,6 @@ Here is the list of algorithms:
 ## Output Format
 The output will be an edge list. You can set the boolean variable weight to True/False to turn On/Off the weighted version.
 ## Graph Analytics
-Now you have the rewired graph, just apply your desired algorithms to this graph.
+Now you have the rewired graph, just apply your desired algorithms to this graph. We provided you with DW and K-mean for community detection.
 
 We also provided GAT.ipynb and GCN.ipynb in the "4.GNN Training" folder.
